@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+
+@model WebApplication1.Models.MailSend
+<link href="~/css/Design.css" rel="stylesheet"/>
+@using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @class = "col-md-10 col-md-offset-1" }))
+{
+    <div class="col-md-12">
+        <div class="col-md-8 divmargin">
+            <span class="col-md-2 col-lg-offset-1">@Html.LabelFor(model => model.FirstName, new { @class = "label label-default" })</span>
+            <span class="col-md-4">@Html.EditorFor(model => model.FirstName, new { @class = "form-control" })</span>
+        </div>
+        <br />
+        <div class="col-md-8 divmargin">
+            <span class="col-md-2 col-lg-offset-1">@Html.LabelFor(model => model.LastName, new { @class = "label label-default" })</span>
+            <span class="col-md-4">@Html.EditorFor(model => model.LastName, new { @class = "form-control" })</span>
+        </div>
+        <div class="col-md-8 divmargin">
+            <span class="col-md-2 col-lg-offset-1">@Html.LabelFor(model => model.DateOfBird, new { @class = "label label-default" })</span>
+            <span class="col-md-4">@Html.EditorFor(model => model.DateOfBird, new { @class = "form-control" })</span>
+        </div>
+        <div class="col-md-8 divmargin">
+            <span class="col-md-2 col-lg-offset-1">@Html.LabelFor(model => model.Email, new { @class = "label label-default" })</span>
+            <span class="col-md-4">@Html.EditorFor(model => model.Email, new { @class = "form-control" })</span>
+        </div>
+        <div class="col-md-8 col-lg-offset-2">
+            <input type="submit" value="Send" class="btn btn-primary button" style="margin-bottom:20px; width:140px; height:40px" />
+        </div>
+    </div>
+}
